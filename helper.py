@@ -6,7 +6,6 @@ from indisim_mutual import realtime_data
 from flask_cors import CORS
 import numpy as np
 from json import JSONEncoder
-from clean import clean_population_data
 
 
 class NumpyArrayEncoder(JSONEncoder):
@@ -82,10 +81,5 @@ def run_simulator():
             alive_species.append(spec)
 
         responseData.append([species_distribution, alive_species, pop])
-        # clean_data = clean_population_data(alive_species, pop)
-        # responseData.append(clean_data)
 
-    # print(alive_species, pop)
-
-    # return {"species": test_p.get_species(), "population": test_s.get_n(), "glucose": test_history.s, "adenine": test_history.sa, "lysine": test_history.sl}
     return {"responseData": responseData}

@@ -14,6 +14,8 @@
 
 ### Run the Server
 
+`pip install -e ../indisim_mutual && gunicorn --preload --workers 4 --threads 100 main:app`
+
 1. Navigate to the backend directory and make sure all the required packages are installed.
 2. Use the following command to start the server.
    `python3 main.py`

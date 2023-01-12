@@ -18,7 +18,7 @@ class NumpyArrayEncoder(JSONEncoder):
 REALTIME_DATA = ""
 
 
-def run_simulator():
+def run_simulator(sessionid):
     data = json.loads(request.data.decode("utf-8"))
     population_args = data['population']
     media_args = data['media']
@@ -31,7 +31,7 @@ def run_simulator():
         7, 7, 7), glucose=media_args["glucose"], ade=media_args["adenine"], lys=media_args["lysine"])
     test_history = sim.History()
     test_s = sim.Simulator(
-        population=test_p, media=test_m, history=test_history)
+        population=test_p, media=test_m, history=test_history, sessionid=sessionid)
 
     population_args_keys = population_args.keys()
     species_nonzero = []

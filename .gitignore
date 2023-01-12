@@ -5,6 +5,7 @@
 /venv
 /.pnp
 .pnp.js
+/realtime
 
 # testing
 /coverage

@@ -49,7 +49,7 @@ def run_simulator(sessionid):
     print("-----------------------------start-----------------------------")
 
     test_s.experiment(
-        transfer_p=run_args["transfer_p"], n_initial=0, n_transfer=1, show_progress=False)
+        transfer_p=run_args["transfer_p"], transfer_frequency=run_args["days"], n_initial=0, n_transfer=1, show_progress=False)
     print("-----------------------------end-----------------------------")
 
     n = len(test_history.p)

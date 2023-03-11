@@ -47,7 +47,6 @@ h11==0.14.0
 idna==3.3
 imagesize==1.4.1
 importlib-metadata==4.12.0
--e git+https://github.com/shubhamchopade/indisim_mutual.git@7f03ee6061e9de34d4d696cb0cd3b6831810b62c#egg=indisim_mutual
 install==1.3.5
 ipykernel==6.15.2
 ipython==8.5.0

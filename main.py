@@ -1,13 +1,8 @@
-from datetime import datetime
 import time
-from flask import Flask, json, request, jsonify, Response, make_response
-from flask_restful import Api, reqparse
-import indisim_mutual as sim
-from indisim_mutual import realtime_data
+from flask import Flask, Response, send_file
+from flask_restful import Api
 from flask_cors import CORS
-import numpy as np
-from json import JSONEncoder
-from helper import run_simulator, REALTIME_DATA
+from helper import run_simulator
 import os
 import shutil
 
@@ -30,11 +25,18 @@ def run(sessionid):
     return data
 
 
+@app.route('/<sessionid>/csv', methods=['GET'])
+def download(sessionid):
+    path = f'csv/{sessionid}/output.csv'
+    return send_file(path, as_attachment=True)
+
+
 @app.route('/<sessionid>/stream')
 def stream(sessionid):
 
     def get_data():
-        path = os.path.abspath(f'realtime/{sessionid}/realtime_updated.json')
+        # TODO - handle if path does not exist
+        path = os.path.abspath(f'realtime/{sessionid}/data.json')
         while path:
             time.sleep(1)
             with open(path, "r") as realtime:

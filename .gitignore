@@ -6,6 +6,7 @@
 /.pnp
 .pnp.js
 /realtime
+/csv
 
 # testing
 /coverage

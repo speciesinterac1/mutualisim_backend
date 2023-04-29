@@ -31,7 +31,7 @@ executing==1.0.0
 Faker==14.2.1
 fastapi==0.89.1
 fastjsonschema==2.16.1
-Flask==2.1.0
+Flask>=2.2.2
 Flask-Cors==3.0.10
 flask-redis==0.4.0
 Flask-RESTful==0.3.9
@@ -54,7 +54,7 @@ ipython-genutils==0.2.0
 ipywidgets==8.0.2
 itsdangerous==2.1.2
 jedi==0.18.1
-Jinja2==3.1.2
+Jinja2
 jsonschema==4.15.0
 jupyter==1.0.0
 jupyter-console==6.4.4
